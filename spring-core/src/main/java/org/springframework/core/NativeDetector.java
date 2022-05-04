@@ -19,6 +19,8 @@ package org.springframework.core;
 /**
  * A common delegate for detecting a GraalVM native image environment.
  *
+ * 用于检测 GraalVM 原生镜像环境的通用委托。
+ *
  * <p>Requires using the {@code -H:+InlineBeforeAnalysis} native image compiler flag in order to allow code removal at
  * build time.
  *

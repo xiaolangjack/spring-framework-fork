@@ -489,6 +489,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 	 * @see org.springframework.core.io.support.PathMatchingResourcePatternResolver
 	 */
 	protected ResourcePatternResolver getResourcePatternResolver() {
+		// 创建一个资源模式解析器： PathMatchingResourcePatternResolver， 主要用来解析配置文件的
 		return new PathMatchingResourcePatternResolver(this);
 	}
 
@@ -655,13 +656,17 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader
 		}
 
 		// Initialize any placeholder property sources in the context environment.
+		// 给子类覆盖， 初始化属性资源
 		initPropertySources();
 
 		// Validate that all properties marked as required are resolvable:
 		// see ConfigurablePropertyResolver#setRequiredProperties
+		// 验证环境对象中不能为空的属性
 		getEnvironment().validateRequiredProperties();
 
 		// Store pre-refresh ApplicationListeners...
+		// 判断前置应用程序监听器集合是否是空的，如果是空的则将监听器添加到此集合中
+		// 否则先清空应用程序监听器的数据，然后前置程序监听器集合的数据添加到应用程序监听器中
 		if (this.earlyApplicationListeners == null) {
 			this.earlyApplicationListeners = new LinkedHashSet<>(this.applicationListeners);
 		}
