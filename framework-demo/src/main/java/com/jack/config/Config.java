@@ -1,5 +1,6 @@
 package com.jack.config;
 
+import com.jack.model.Address;
 import com.jack.model.Person;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,13 @@ import org.springframework.context.annotation.Bean;
 public class Config {
 	@Bean(name = "person1")
 	private Person person(){
-		return new Person("Jacky","18");
+		Person jacky = new Person("Jacky", "18");
+		jacky.setAddress(address());
+		return jacky;
+	}
+
+	@Bean
+	private Address address(){
+		return new Address("gz", "zy", "rh");
 	}
 }
