@@ -71,7 +71,12 @@ public abstract class CoroutinesUtils {
 	 */
 	public static Publisher<?> invokeSuspendingFunction(Method method, Object target, Object... args) {
 		KFunction<?> function = Objects.requireNonNull(ReflectJvmMapping.getKotlinFunction(method));
-		if (method.isAccessible() && !KCallablesJvm.isAccessible(function)) {
+		// isAccessible 这个方法在 JDK9+ 以后就舍弃了 ，建议换成canAccess方法来判断
+//		if (method.isAccessible() && !KCallablesJvm.isAccessible(function)) {
+//			KCallablesJvm.setAccessible(function, true);
+//		}
+		// jdk
+		if (method.canAccess(target) && !KCallablesJvm.isAccessible(function)) {
 			KCallablesJvm.setAccessible(function, true);
 		}
 		KClassifier classifier = function.getReturnType().getClassifier();
