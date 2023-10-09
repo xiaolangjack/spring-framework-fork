@@ -9,6 +9,13 @@
 	<bean id="person" class="com.jack.model.Person">
 		<property name="name" value="xiaolang"/>
 		<property name="age" value="118"/>
+		<property name="address" ref="address"/>
+	</bean>
+
+	<bean id="address" class="com.jack.model.Address">
+		<property name="province" value="贵州省"/>
+		<property name="city" value="仁怀市"/>
+		<property name="detail" value="后面"/>
 	</bean>
 
 	<!-- more bean definitions for services go here -->

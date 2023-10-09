@@ -10,6 +10,17 @@ public class Person {
 	private String name;
 	private String age;
 
+	private Address address;
+
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
 	public Person() {
 	}
 
@@ -39,6 +50,7 @@ public class Person {
 		return "Person{" +
 				"name='" + name + '\'' +
 				", age='" + age + '\'' +
+				", address=" + address +
 				'}';
 	}
 }
