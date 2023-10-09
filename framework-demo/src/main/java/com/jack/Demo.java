@@ -4,7 +4,7 @@ import com.jack.model.Person;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * Created By: yy<lanqiu@deloitte.com.cn>
+ * Created By: yy<workinglang@163.com>
  * Created At: 2022/5/2 0:15
  * <p></p>
  */

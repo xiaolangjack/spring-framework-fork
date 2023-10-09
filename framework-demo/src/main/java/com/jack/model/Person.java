@@ -1,7 +1,7 @@
 package com.jack.model;
 
 /**
- * Created By: yy<lanqiu@deloitte.com.cn>
+ * Created By: yy<workinglang@163.com>
  * Created At: 2022/5/2 0:29
  * <p></p>
  */
